@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Booking List</h1>
+
+    {% if booking_list %}
+    <ul>
+
+      {% for b in booking_list %}
+      <li class="bookings">
+          <p>Room: {{b.room.name}}. Date check in: {{b.date_check_in}}. Date check out: {{b.date_check_out}}.</p>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no rooms.</p>
+    {% endif %}
+{% endblock %}

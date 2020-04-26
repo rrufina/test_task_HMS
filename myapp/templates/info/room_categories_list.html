@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Room Categories</h1>
+
+    {% if roomcategory_list %}
+    <ul>
+
+      {% for roomcat in roomcategory_list %}
+      <li class="categories">
+          <p>Category: <a href="{% url 'chosen-category' cat=roomcat.name %}">{{roomcat.name}}</a>. Minimum price is {{roomcat.min_price}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no room categories.</p>
+    {% endif %}
+{% endblock %}

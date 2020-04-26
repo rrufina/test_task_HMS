@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Hotel List</h1>
+
+    {% if hotel_list %}
+    <ul>
+
+      {% for hotel in hotel_list %}
+      <li class="rooms">
+          <p>Hotel: {{hotel.name}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no hotels.</p>
+    {% endif %}
+{% endblock %}

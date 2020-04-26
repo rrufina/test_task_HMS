@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Room List</h1>
+
+    {% if room_list %}
+    <ul>
+
+      {% for room in room_list %}
+      <li class="rooms">
+          <p>Room: {{room.name}}. Category: {{room.room_category.name}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no rooms.</p>
+    {% endif %}
+{% endblock %}
